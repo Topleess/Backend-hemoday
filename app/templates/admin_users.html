@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <title>HemoDay Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="page">
+      <header class="navbar navbar-expand-md navbar-light d-print-none">
+        <div class="container-xl">
+          <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+            <a href=".">🩸 HemoDay Admin</a>
+          </h1>
+        </div>
+      </header>
+      
+      <div class="page-wrapper">
+        <div class="page-header d-print-none">
+          <div class="container-xl">
+            <div class="row g-2 align-items-center">
+              <div class="col">
+                <h2 class="page-title">Семьи (Пациенты)</h2>
+                <div class="text-muted mt-1">Всего семей: {{ families|length }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-body">
+          <div class="container-xl">
+            <div class="card">
+              <div class="table-responsive">
+                <table class="table table-vcenter card-table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Пациент</th>
+                      <th>Код приглашения</th>
+                      <th>Пользователей</th>
+                      <th>Дата создания</th>
+                      <th class="w-1"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for f in families %}
+                    <tr onclick="window.location='/custom-admin/family/{{ f.id }}';" style="cursor: pointer;">
+                      <td>
+                        <div class="d-flex py-1 align-items-center">
+                          <span class="avatar me-2 bg-blue-lt">{{ f.patient_name[0] if f.patient_name else '?' }}</span>
+                          <div class="flex-fill">
+                            <div class="font-weight-medium">{{ f.patient_name or 'Без имени' }}</div>
+                            <div class="text-muted">Вес: {{ f.patient_current_weight }} кг</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="badge bg-azure text-azure-fg">{{ f.invite_code }}</span>
+                      </td>
+                      <td>
+                        {{ f.users|length }} чел.
+                      </td>
+                      <td class="text-muted">
+                        {{ f.created_at.strftime('%d.%m.%Y') }}
+                      </td>
+                      <td>
+                        <a href="/custom-admin/family/{{ f.id }}" class="btn btn-primary btn-sm">Открыть</a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

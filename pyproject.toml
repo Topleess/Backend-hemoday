@@ -1,0 +1,32 @@
+[project]
+name = "hemoday"
+version = "0.1.0"
+requires-python = ">=3.12"  # <--- Возвращаем 3.12!
+
+dependencies = [
+    "fastapi>=0.115.0",           # <--- Свежий FastAPI
+    "uvicorn[standard]>=0.32.0",
+    "tortoise-orm[asyncpg]>=0.21.0", # <--- Свежий Tortoise
+    "aerich>=0.7.2",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.6.0",
+    "email-validator>=2.1.0",
+    "bcrypt==4.0.1",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "python-multipart>=0.0.12",
+    "asyncpg>=0.29.0",
+    "aiofiles>=24.1.0",
+    "jinja2>=3.1.0",
+    "faker",
+    "fastapi-mail>=1.4.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.aerich]
+tortoise_orm = "app.core.config.TORTOISE_ORM"
+location = "./migrations"
+src_folder = "./."

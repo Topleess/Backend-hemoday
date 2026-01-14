@@ -1,0 +1,174 @@
+"""
+WatermelonDB synchronization service
+"""
+from datetime import datetime
+from typing import Any, Dict, List, Optional
+from uuid import UUID
+
+from tortoise.queryset import QuerySet
+
+from app.models import (
+    Transfusion,
+    BloodTest,
+    BloodTestResult,
+    AnalysisTemplate,
+    Reminder,
+    Document,
+)
+
+
+# Mapping of table names to models
+SYNC_MODELS = {
+    "transfusions": Transfusion,
+    "blood_tests": BloodTest,
+    "blood_test_results": BloodTestResult,
+    "analysis_templates": AnalysisTemplate,
+    "reminders": Reminder,
+    "documents": Document,
+}
+
+
+class SyncService:
+    """Service for handling WatermelonDB synchronization"""
+    
+    @staticmethod
+    async def pull_changes(
+        family_id: UUID,
+        last_pulled_at: Optional[datetime] = None
+    ) -> Dict[str, Any]:
+        """
+        Pull changes from server since last_pulled_at timestamp
+        
+        Args:
+            family_id: Family ID for data isolation
+            last_pulled_at: Timestamp of last sync (None for initial sync)
+        
+        Returns:
+            Dictionary with changes for each table and new timestamp
+        """
+        changes = {}
+        timestamp = datetime.utcnow()
+        
+        for table_name, model in SYNC_MODELS.items():
+            # Build query for family's data
+            query: QuerySet = model.filter(family_id=family_id)
+            
+            # Filter by update time if not initial sync
+            if last_pulled_at:
+                query = query.filter(updated_at__gt=last_pulled_at)
+            
+            # Get created, updated, and deleted records
+            records = await query.all()
+            
+            created = []
+            updated = []
+            deleted = []
+            
+            for record in records:
+                record_dict = await SyncService._serialize_record(record)
+                
+                if record.deleted_at is not None:
+                    deleted.append(record_dict["id"])
+                elif last_pulled_at is None or record.created_at > last_pulled_at:
+                    created.append(record_dict)
+                else:
+                    updated.append(record_dict)
+            
+            changes[table_name] = {
+                "created": created,
+                "updated": updated,
+                "deleted": deleted,
+            }
+        
+        return {
+            "changes": changes,
+            "timestamp": int(timestamp.timestamp() * 1000),  # Milliseconds
+        }
+    
+    @staticmethod
+    async def push_changes(
+        family_id: UUID,
+        changes: Dict[str, Any]
+    ) -> None:
+        """
+        Push changes from client to server
+        
+        Args:
+            family_id: Family ID for data isolation
+            changes: Dictionary with changes for each table
+        """
+        for table_name, table_changes in changes.items():
+            model = SYNC_MODELS.get(table_name)
+            if not model:
+                continue
+            
+            # Process created records
+            for record_data in table_changes.get("created", []):
+                record_data["family_id"] = family_id
+                await SyncService._create_or_update_record(model, record_data)
+            
+            # Process updated records
+            for record_data in table_changes.get("updated", []):
+                record_data["family_id"] = family_id
+                await SyncService._create_or_update_record(model, record_data)
+            
+            # Process deleted records (soft delete)
+            for record_id in table_changes.get("deleted", []):
+                await SyncService._soft_delete_record(model, record_id, family_id)
+    
+    @staticmethod
+    async def _serialize_record(record: Any) -> Dict[str, Any]:
+        """Serialize a model instance to dictionary"""
+        data = {}
+        
+        for field_name in record._meta.fields_map.keys():
+            value = getattr(record, field_name, None)
+            
+            # Convert datetime to milliseconds timestamp
+            if isinstance(value, datetime):
+                data[field_name] = int(value.timestamp() * 1000)
+            # Convert UUID to string
+            elif hasattr(value, "hex"):
+                data[field_name] = str(value)
+            else:
+                data[field_name] = value
+        
+        return data
+    
+    @staticmethod
+    async def _create_or_update_record(model: Any, data: Dict[str, Any]) -> None:
+        """Create or update a record"""
+        record_id = data.get("id")
+        
+        # Convert timestamps back to datetime
+        for field in ["created_at", "updated_at", "deleted_at"]:
+            if field in data and data[field] is not None:
+                if isinstance(data[field], int):
+                    data[field] = datetime.fromtimestamp(data[field] / 1000)
+        
+        # Convert date fields
+        if "date" in data and data["date"] is not None:
+            if isinstance(data["date"], int):
+                data["date"] = datetime.fromtimestamp(data["date"] / 1000)
+        
+        if "remind_at" in data and data["remind_at"] is not None:
+            if isinstance(data["remind_at"], int):
+                data["remind_at"] = datetime.fromtimestamp(data["remind_at"] / 1000)
+        
+        # Check if record exists
+        existing = await model.filter(id=record_id).first()
+        
+        if existing:
+            # Update existing record
+            await model.filter(id=record_id).update(**data)
+        else:
+            # Create new record
+            await model.create(**data)
+    
+    @staticmethod
+    async def _soft_delete_record(model: Any, record_id: str, family_id: UUID) -> None:
+        """Soft delete a record"""
+        await model.filter(
+            id=UUID(record_id),
+            family_id=family_id
+        ).update(deleted_at=datetime.utcnow())
