@@ -1,70 +1,34 @@
-services:
-  db:
-    image: postgres:16-alpine
-    container_name: hemoday_db
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER:-hemoday}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hemoday_secret_2024}
-      POSTGRES_DB: ${POSTGRES_DB:-hemoday}
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-hemoday}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    restart: always
+version: '3.8'
 
+services:
   api:
     build: .
     container_name: hemoday_api
     env_file:
       - .env
-    depends_on:
-      db:
-        condition: service_healthy
     environment:
-      POSTGRES_HOST: db
-      POSTGRES_PORT: 5432
-      POSTGRES_DB: ${POSTGRES_DB:-hemoday}
-      POSTGRES_USER: ${POSTGRES_USER:-hemoday}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hemoday_secret_2024}
+      # Указываем адрес нашего нового общего контейнера базы
+      - POSTGRES_HOST=common_db
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=hemoday
+      - POSTGRES_USER=admin_me
+      - POSTGRES_PASSWORD=RedStar-me
     volumes:
       - ./uploads:/app/uploads
       - ./migrations:/app/migrations
       - ./app:/app/app
     restart: always
+    # Команда сама создаст таблицы в новой базе при старте
     command: sh -c "aerich upgrade && uvicorn app.main:app --host 0.0.0.0 --port 8000"
-    
     networks:
-      - web 
-      - default
+      - web
     labels:
+      - "traefik.docker.network=web"
       - "traefik.enable=true"
-      - "traefik.http.routers.hemoday.rule=Host(`api.твойдомен.ru`)"
+      - "traefik.http.routers.hemoday.rule=Host(`api.hemoday.online`)"
       - "traefik.http.routers.hemoday.entrypoints=websecure"
       - "traefik.http.routers.hemoday.tls.certresolver=myresolver"
       - "traefik.http.services.hemoday.loadbalancer.server.port=8000"
-
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: hemoday_pgadmin
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
-      PGADMIN_DEFAULT_PASSWORD: "admin"
-    networks:
-      - web
-      - default
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.hemoday-pgadmin.rule=Host(`pg.твойдомен.ru`)"
-      - "traefik.http.routers.hemoday-pgadmin.entrypoints=websecure"
-      - "traefik.http.routers.hemoday-pgadmin.tls.certresolver=myresolver"
-      - "traefik.http.services.hemoday-pgadmin.loadbalancer.server.port=80"
-
-volumes:
-  postgres_data:
 
 networks:
   web:

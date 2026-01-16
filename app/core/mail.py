@@ -27,7 +27,7 @@ async def send_reset_email(email_to: str, token: str):
     Отправляет письмо со ссылкой на сброс пароля
     """
     # Ссылка на сброс (пока локальная)
-    reset_link = f"http://localhost:8000/reset-password-page?token={token}"
+    reset_link = f"http://api.hemoday.online/reset-password-page?token={token}"
     
     template_body = {
         "link": reset_link,
