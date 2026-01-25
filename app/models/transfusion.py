@@ -2,41 +2,35 @@
 Transfusion model - blood transfusion records
 """
 from tortoise import fields
-
 from app.models.base import WatermelonDBModel
-
 
 class Transfusion(WatermelonDBModel):
     """
-    Blood transfusion records with medication and indicator tracking
+    Blood transfusion records
     """
-    
     family = fields.ForeignKeyField(
         "models.Family",
         related_name="transfusions",
         on_delete=fields.CASCADE
     )
     
-    date = fields.DatetimeField()
-    volume_ml = fields.IntField()
-    patient_weight_kg = fields.FloatField()
+    date = fields.CharField(max_length=255) # Mobile stores as string
     
-    # User-defined medication name
-    medication_name = fields.CharField(max_length=255, null=True)
+    # New fields matching mobile schema
+    component = fields.CharField(max_length=255, null=True)
+    volume = fields.IntField() # Renamed from volume_ml
+    weight = fields.FloatField() # Renamed from patient_weight_kg
+    volume_per_kg = fields.FloatField(default=0.0)
+    hb_before = fields.FloatField(default=0.0)
+    hb_after = fields.FloatField(default=0.0)
+    delta_hb = fields.FloatField(default=0.0)
+    chelator = fields.CharField(max_length=255, null=True)
     
-    # Indicator (default "Hemoglobin")
-    indicator_name = fields.CharField(max_length=255, default="Hemoglobin")
-    
-    # Values before and after transfusion
-    value_before = fields.FloatField()
-    value_after = fields.FloatField()
-    
-    # Additional notes
-    notes = fields.TextField(null=True)
+    # Removed: medication_name, indicator_name, value_before, value_after, notes
     
     class Meta:
         table = "transfusions"
         ordering = ["-date"]
     
     def __str__(self):
-        return f"Transfusion {self.date} - {self.volume_ml}ml"
+        return f"Transfusion {self.date} - {self.volume}ml"

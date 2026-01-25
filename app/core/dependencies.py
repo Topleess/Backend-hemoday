@@ -2,7 +2,6 @@
 FastAPI dependencies for authentication and authorization
 """
 from typing import Optional
-from uuid import UUID
 
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
@@ -39,7 +38,7 @@ async def get_current_user(
         )
     
     try:
-        user = await User.get(id=UUID(user_id)).prefetch_related("family")
+        user = await User.get(id=user_id).prefetch_related("family")
     except Exception:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -57,8 +56,8 @@ async def get_current_user(
     return user
 
 
-async def get_current_family_id(current_user: User = Depends(get_current_user)) -> UUID:
+async def get_current_family_id(current_user: User = Depends(get_current_user)) -> str:
     """
     Get current user's family ID for data isolation
     """
-    return current_user.family_id
+    return str(current_user.family_id)

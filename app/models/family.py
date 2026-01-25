@@ -21,6 +21,7 @@ class Family(WatermelonDBModel):
     """
     
     invite_code = fields.CharField(max_length=6, unique=True, default=generate_invite_code)
+    owner_id = fields.CharField(max_length=255, null=True)
     patient_name = fields.CharField(max_length=255, null=True)
     patient_current_weight = fields.FloatField(null=True)
     patient_birth_date = fields.DateField(null=True)

@@ -1,35 +1,56 @@
 version: '3.8'
 
 services:
+  db:
+    image: postgres:16
+    container_name: hemoday_db
+    environment:
+      POSTGRES_USER: hemoday
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: hemoday
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - web
+    restart: always
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U hemoday" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   api:
     build: .
     container_name: hemoday_api
+    depends_on:
+      db:
+        condition: service_healthy
     env_file:
       - .env
     environment:
-      # Указываем адрес нашего нового общего контейнера базы
-      - POSTGRES_HOST=common_db
+      - POSTGRES_HOST=db
       - POSTGRES_PORT=5432
       - POSTGRES_DB=hemoday
-      - POSTGRES_USER=admin_me
-      - POSTGRES_PASSWORD=RedStar-me
+      - POSTGRES_USER=hemoday
+      - POSTGRES_PASSWORD=password
     volumes:
       - ./uploads:/app/uploads
       - ./migrations:/app/migrations
       - ./app:/app/app
     restart: always
-    # Команда сама создаст таблицы в новой базе при старте
-    command: sh -c "aerich upgrade && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    # Run migrations and start app
+    command: sh -c "aerich upgrade && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+    ports:
+      - "8000:8000"
     networks:
       - web
-    labels:
-      - "traefik.docker.network=web"
-      - "traefik.enable=true"
-      - "traefik.http.routers.hemoday.rule=Host(`api.hemoday.online`)"
-      - "traefik.http.routers.hemoday.entrypoints=websecure"
-      - "traefik.http.routers.hemoday.tls.certresolver=myresolver"
-      - "traefik.http.services.hemoday.loadbalancer.server.port=8000"
+
+volumes:
+  postgres_data:
+
 
 networks:
   web:
-    external: true
+    driver: bridge

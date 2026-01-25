@@ -1,16 +1,13 @@
 """
-Reminder model - scheduled reminders for users
+Reminder model - scheduled reminders
 """
 from tortoise import fields
-
 from app.models.base import WatermelonDBModel
-
 
 class Reminder(WatermelonDBModel):
     """
-    Reminders for medical events, tests, or transfusions
+    Reminders for medical events
     """
-    
     family = fields.ForeignKeyField(
         "models.Family",
         related_name="reminders",
@@ -18,14 +15,15 @@ class Reminder(WatermelonDBModel):
     )
     
     title = fields.CharField(max_length=255)
-    remind_at = fields.DatetimeField()
-    frequency = fields.CharField(max_length=50)  # e.g., "once", "daily", "weekly"
-    text = fields.TextField(null=True)
-    is_completed = fields.BooleanField(default=False)
+    date = fields.CharField(max_length=255) # Mobile stores as string
+    time = fields.CharField(max_length=255) # Mobile stores as string
+    repeat = fields.CharField(max_length=50) # Renamed from frequency
+    note = fields.TextField(null=True) # Renamed from text
+    # Removed: is_completed, remind_at
     
     class Meta:
         table = "reminders"
-        ordering = ["remind_at"]
+        ordering = ["date", "time"]
     
     def __str__(self):
-        return f"Reminder: {self.title} at {self.remind_at}"
+        return f"Reminder: {self.title} at {self.date} {self.time}"

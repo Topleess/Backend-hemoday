@@ -22,6 +22,9 @@ class Settings(BaseSettings):
     MAIL_FROM_NAME: str = "HemoDay"
     MAIL_STARTTLS: bool = False
     MAIL_SSL_TLS: bool = True
+    
+    # URL генерация
+    SERVER_HOST: str = "http://localhost:8000"
     # 👆 -------------------- 👆
     
     # JWT
@@ -61,11 +64,14 @@ TORTOISE_ORM = {
                 "app.models.user",
                 "app.models.family",
                 "app.models.transfusion",
-                "app.models.reminder",     # Если есть
-                "app.models.blood_test",   # Если есть
-                "app.models.document",     # Если есть
-                "aerich.models",           # Обязательно
-                "app.models.password_reset", # <--- ДОБАВЬ ВОТ ЭТУ СТРОКУ
+                "app.models.reminder",
+                "app.models.analysis",
+                "app.models.analysis_template",
+                "app.models.component_type",
+                "app.models.chelator_type",
+                "app.models.document",
+                "aerich.models",
+                "app.models.password_reset",
                 ],
             "default_connection": "default",
         },

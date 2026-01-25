@@ -3,6 +3,9 @@ from contextlib import asynccontextmanager
 from typing import Optional
 
 from fastapi import FastAPI, Request, Depends, HTTPException, status, Form
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
+import logging
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
@@ -42,6 +45,14 @@ app.add_middleware(
 )
 
 app.include_router(api_v1_router)
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    logging.error(f"422 Validation Error: {exc.errors()}")
+    return JSONResponse(
+        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        content={"detail": exc.errors()},
+    )
 
 # --- ФУНКЦИЯ ПРОВЕРКИ ПАРОЛЯ ДЛЯ АДМИНКИ ---
 def get_current_username(credentials: HTTPBasicCredentials = Depends(security)):
@@ -115,7 +126,12 @@ async def reset_password_page(request: Request, token: str):
     reset_token = await PasswordResetToken.get_or_none(token=token, used=False)
     
     if not reset_token or reset_token.is_expired():
-        return HTMLResponse(content="<h1>Ошибка</h1><p>Ссылка устарела или неверна.</p>", status_code=400)
+        return templates.TemplateResponse(
+            request=request,
+            name="reset_password_error.html",
+            context={"error_message": "Ссылка устарела или неверна."},
+            status_code=400
+        )
 
     return templates.TemplateResponse(
         request=request, 
@@ -124,11 +140,16 @@ async def reset_password_page(request: Request, token: str):
     )
 
 @app.post("/reset-password-action", include_in_schema=False)
-async def reset_password_action(token: str = Form(...), password: str = Form(...)):
+async def reset_password_action(request: Request, token: str = Form(...), password: str = Form(...)):
     reset_token = await PasswordResetToken.get_or_none(token=token, used=False).prefetch_related("user")
     
     if not reset_token or reset_token.is_expired():
-        return HTMLResponse(content="<h1>Ошибка</h1><p>Ссылка устарела.</p>", status_code=400)
+        return templates.TemplateResponse(
+            request=request,
+            name="reset_password_error.html",
+            context={"error_message": "Ссылка устарела."},
+            status_code=400
+        )
 
     user = reset_token.user
     user.password_hash = bcrypt.hash(password)
@@ -137,7 +158,10 @@ async def reset_password_action(token: str = Form(...), password: str = Form(...
     reset_token.used = True
     await reset_token.save()
 
-    return HTMLResponse(content="<h1>Успешно!</h1><p>Пароль изменен. Теперь вы можете войти в приложение.</p>")
+    return templates.TemplateResponse(
+        request=request,
+        name="reset_password_success.html"
+    )
 
 # --- РЕГИСТРАЦИЯ TORTOISE ---
 # Используем TORTOISE_ORM напрямую, чтобы не путаться в именах переменных

@@ -51,6 +51,10 @@ async def register(data: UserRegister):
         family_id=family.id,
     )
     
+    # Set the user as family owner
+    family.owner_id = str(user.id)
+    await family.save()
+    
     # Generate JWT token
     access_token = create_access_token(data={"sub": str(user.id)})
     
@@ -145,10 +149,14 @@ async def get_current_user_info(current_user: User = Depends(get_current_user)):
     """
     Get current user information
     """
+    # Ensure family is loaded
+    await current_user.fetch_related("family")
+    
     return UserResponse(
         id=current_user.id,
         email=current_user.email,
         family_id=current_user.family_id,
+        invite_code=current_user.family.invite_code if current_user.family else None,
         created_at=current_user.created_at,
     )
 
@@ -172,22 +180,19 @@ async def request_password_reset(data: PasswordResetRequest):
             message="If this email exists in our system, a password reset email will be sent."
         )
     
-    # Generate new temporary password
-    import secrets
-    import string
-    temporary_password = ''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(12))
-    
-    # Update user password
-    user.password_hash = get_password_hash(temporary_password)
-    await user.save()
-    
-    # TODO: Send email with temporary password
-    # For now, we'll just log it (in production, send actual email)
-    print(f"Password reset for {user.email}: {temporary_password}")
-    
     # Create reset token for tracking
-    await PasswordResetToken.create_token(user.id)
+    token_obj = await PasswordResetToken.create_token(str(user.id))
     
+    # Send email
+    from app.core.mail import send_reset_email
+    try:
+        await send_reset_email(user.email, token_obj.token)
+    except Exception as e:
+        print(f"Error sending email to {user.email}: {e}")
+        # In production we might want to alert admins or return an error,
+        # but for security we often shouldn't tell the user if the detailed error occurred regarding email provider.
+        # However, for this project, let's just log it.
+
     return PasswordResetResponse(
         message="If this email exists in our system, a password reset email will be sent."
     )

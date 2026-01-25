@@ -3,7 +3,6 @@ Pydantic schemas for API request/response validation
 """
 from datetime import datetime
 from typing import Any, Dict, List, Optional
-from uuid import UUID
 
 from pydantic import BaseModel, EmailStr, Field
 
@@ -29,6 +28,11 @@ class JoinFamily(BaseModel):
     invite_code: str = Field(..., min_length=6, max_length=6)
 
 
+class JoinFamilyRequest(BaseModel):
+    """Join family request for authenticated users"""
+    invite_code: str = Field(..., min_length=6, max_length=6)
+
+
 class Token(BaseModel):
     """JWT token response"""
     access_token: str
@@ -40,9 +44,10 @@ class Token(BaseModel):
 
 class UserResponse(BaseModel):
     """User information response"""
-    id: UUID
+    id: str
     email: str
-    family_id: UUID
+    family_id: str
+    invite_code: Optional[str] = None
     created_at: datetime
     
     class Config:
@@ -77,6 +82,27 @@ class TableChanges(BaseModel):
 class SyncPushRequest(BaseModel):
     """Request for push synchronization"""
     changes: Dict[str, TableChanges]
+
+
+# ============= Family Schemas =============
+
+class FamilyDetailsResponse(BaseModel):
+    """Detailed family information including members"""
+    id: str
+    invite_code: str
+    owner_id: Optional[str] = None
+    patient_name: Optional[str] = None
+    patient_current_weight: Optional[float] = None
+    patient_birth_date: Optional[datetime] = None # Using datetime for simplicity with Pydantic
+    members: List[UserResponse]
+
+    class Config:
+        from_attributes = True
+
+
+class RemoveMemberRequest(BaseModel):
+    """Request to remove a member from the family"""
+    user_id: str
 
 
 # ============= File Upload Schemas =============

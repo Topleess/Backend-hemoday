@@ -1,0 +1,1350 @@
+hemoday_api  | No upgrade items found
+hemoday_api  | INFO:     Started server process [10]
+hemoday_api  | INFO:     Waiting for application startup.
+hemoday_api  | INFO:     Application startup complete.
+hemoday_api  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+hemoday_api  | No upgrade items found
+hemoday_api  | INFO:     Started server process [10]
+hemoday_api  | INFO:     Waiting for application startup.
+hemoday_api  | INFO:     Application startup complete.
+hemoday_api  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+hemoday_api  | No upgrade items found
+hemoday_api  | INFO:     Started server process [10]
+hemoday_api  | INFO:     Waiting for application startup.
+hemoday_api  | INFO:     Application startup complete.
+hemoday_api  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+hemoday_api  | INFO:     172.19.0.1:54914 - "OPTIONS /api/v1/auth/me HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:54914 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:54914 - "OPTIONS /api/v1/sync?last_pulled_at=1769319278014&schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | ERROR:root:Таблица transfusions пропущена: column "chelator" does not exist
+hemoday_api  | ERROR:root:Таблица analyses пропущена: relation "analyses" does not exist
+hemoday_api  | ERROR:root:Таблица analysis_items пропущена: relation "analysis_items" does not exist
+hemoday_api  | ERROR:root:Таблица analysis_templates пропущена: relation "analysis_templates" does not exist
+hemoday_api  | ERROR:root:Таблица analysis_template_items пропущена: relation "analysis_template_items" does not exist
+hemoday_api  | ERROR:root:Таблица reminders пропущена: column "time" does not exist
+hemoday_api  | HINT:  Perhaps you meant to reference the column "reminders.title".
+hemoday_api  | ERROR:root:Таблица component_types пропущена: relation "component_types" does not exist
+hemoday_api  | ERROR:root:Таблица chelator_types пропущена: relation "chelator_types" does not exist
+hemoday_api  | INFO:     172.19.0.1:54914 - "GET /api/v1/sync?last_pulled_at=1769319278014&schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:52644 - "OPTIONS /api/v1/auth/login HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:52644 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:52644 - "OPTIONS /api/v1/sync?schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | ERROR:root:Таблица transfusions пропущена: column "chelator" does not exist
+hemoday_api  | ERROR:root:Таблица analyses пропущена: relation "analyses" does not exist
+hemoday_api  | ERROR:root:Таблица analysis_items пропущена: relation "analysis_items" does not exist
+hemoday_api  | ERROR:root:Таблица analysis_templates пропущена: relation "analysis_templates" does not exist
+hemoday_api  | ERROR:root:Таблица analysis_template_items пропущена: relation "analysis_template_items" does not exist
+hemoday_api  | ERROR:root:Таблица reminders пропущена: column "time" does not exist
+hemoday_api  | HINT:  Perhaps you meant to reference the column "reminders.title".
+hemoday_api  | ERROR:root:Таблица component_types пропущена: relation "component_types" does not exist
+hemoday_api  | ERROR:root:Таблица chelator_types пропущена: relation "chelator_types" does not exist
+hemoday_api  | INFO:     172.19.0.1:52644 - "GET /api/v1/sync?schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:52644 - "OPTIONS /api/v1/sync HTTP/1.1" 200 OK
+hemoday_api  | ERROR:root:Error syncing table component_types: relation "component_types" does not exist
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2013, in _do_execute
+hemoday_api  |     stmt = await self._get_statement(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 443, in _get_statement
+hemoday_api  |     statement = await self._protocol.prepare(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+hemoday_api  | asyncpg.exceptions.UndefinedTableError: relation "component_types" does not exist
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: relation "component_types" does not exist
+hemoday_api  | --- Syncing table: transfusions ---
+hemoday_api  | Created: 0
+hemoday_api  | --- Syncing table: analyses ---
+hemoday_api  | Created: 0
+hemoday_api  | --- Syncing table: analysis_items ---
+hemoday_api  | Created: 0
+hemoday_api  | --- Syncing table: reminders ---
+hemoday_api  | Created: 0
+hemoday_api  | --- Syncing table: component_types ---
+hemoday_api  | Created: 3
+hemoday_api  | First item: {'id': 'J9BkoPPLyJtM12nG', '_status': 'created', '_changed': '', 'name': 'Тромбоциты', 'icon_name': 'history', 'is_default': True, 'sort_order': 3, 'created_at': 0, 'updated_at': 0}
+hemoday_api  | INFO:     172.19.0.1:52644 - "POST /api/v1/sync HTTP/1.1" 500 Internal Server Error
+hemoday_api  | ERROR:    Exception in ASGI application
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2013, in _do_execute
+hemoday_api  |     stmt = await self._get_statement(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 443, in _get_statement
+hemoday_api  |     statement = await self._protocol.prepare(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+hemoday_api  | asyncpg.exceptions.UndefinedTableError: relation "component_types" does not exist
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+hemoday_api  |     result = await app(  # type: ignore[func-returns-value]
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+hemoday_api  |     return await self.app(scope, receive, send)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1135, in __call__
+hemoday_api  |     await super().__call__(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+hemoday_api  |     await self.app(scope, receive, _send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+hemoday_api  |     await self.simple_response(scope, receive, send, request_headers=headers)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+hemoday_api  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+hemoday_api  |     await route.handle(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 115, in app
+hemoday_api  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 101, in app
+hemoday_api  |     response = await f(request)
+hemoday_api  |                ^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 355, in app
+hemoday_api  |     raw_response = await run_endpoint_function(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+hemoday_api  |     return await dependant.call(**values)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/app/app/api/v1/sync.py", line 36, in push_changes
+hemoday_api  |     await SyncService.push_changes(
+hemoday_api  |   File "/app/app/services/sync.py", line 128, in push_changes
+hemoday_api  |     raise e
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: relation "component_types" does not exist
+hemoday_api  | INFO:     172.19.0.1:52652 - "OPTIONS /api/v1/sync?last_pulled_at=1769319981603&schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | ERROR:root:Таблица transfusions пропущена: column "chelator" does not exist
+hemoday_api  | ERROR:root:Таблица analyses пропущена: relation "analyses" does not exist
+hemoday_api  | ERROR:root:Таблица analysis_items пропущена: relation "analysis_items" does not exist
+hemoday_api  | ERROR:root:Таблица analysis_templates пропущена: relation "analysis_templates" does not exist
+hemoday_api  | ERROR:root:Таблица analysis_template_items пропущена: relation "analysis_template_items" does not exist
+hemoday_api  | ERROR:root:Таблица reminders пропущена: column "time" does not exist
+hemoday_api  | HINT:  Perhaps you meant to reference the column "reminders.title".
+hemoday_api  | ERROR:root:Таблица component_types пропущена: relation "component_types" does not exist
+hemoday_api  | ERROR:root:Таблица chelator_types пропущена: relation "chelator_types" does not exist
+hemoday_api  | INFO:     172.19.0.1:52652 - "GET /api/v1/sync?last_pulled_at=1769319981603&schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:52652 - "OPTIONS /api/v1/sync HTTP/1.1" 200 OK
+hemoday_api  | ERROR:root:Error syncing table transfusions: column "chelator" does not exist
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2013, in _do_execute
+hemoday_api  |     stmt = await self._get_statement(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 443, in _get_statement
+hemoday_api  |     statement = await self._protocol.prepare(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+hemoday_api  | asyncpg.exceptions.UndefinedColumnError: column "chelator" does not exist
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: column "chelator" does not exist
+hemoday_api  | --- Syncing table: transfusions ---
+hemoday_api  | Created: 1
+hemoday_api  | First item: {'id': 'B6TFREKwIy2vURYt', '_status': 'created', '_changed': '', 'date': '2026-01-25', 'component': 'Гемоглобин', 'volume': 250, 'weight': 70, 'volume_per_kg': 3.5714285714285716, 'hb_before': 85, 'hb_after': 100, 'delta_hb': 15, 'chelator': None, 'created_at': 1769319985578, 'updated_at': 1769319985578}
+hemoday_api  | INFO:     172.19.0.1:52652 - "POST /api/v1/sync HTTP/1.1" 500 Internal Server Error
+hemoday_api  | ERROR:    Exception in ASGI application
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2013, in _do_execute
+hemoday_api  |     stmt = await self._get_statement(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 443, in _get_statement
+hemoday_api  |     statement = await self._protocol.prepare(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+hemoday_api  | asyncpg.exceptions.UndefinedColumnError: column "chelator" does not exist
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+hemoday_api  |     result = await app(  # type: ignore[func-returns-value]
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+hemoday_api  |     return await self.app(scope, receive, send)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1135, in __call__
+hemoday_api  |     await super().__call__(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+hemoday_api  |     await self.app(scope, receive, _send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+hemoday_api  |     await self.simple_response(scope, receive, send, request_headers=headers)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+hemoday_api  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+hemoday_api  |     await route.handle(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 115, in app
+hemoday_api  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 101, in app
+hemoday_api  |     response = await f(request)
+hemoday_api  |                ^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 355, in app
+hemoday_api  |     raw_response = await run_endpoint_function(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+hemoday_api  |     return await dependant.call(**values)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/app/app/api/v1/sync.py", line 36, in push_changes
+hemoday_api  |     await SyncService.push_changes(
+hemoday_api  |   File "/app/app/services/sync.py", line 128, in push_changes
+hemoday_api  |     raise e
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: column "chelator" does not exist
+hemoday_api  | INFO:     172.19.0.1:56674 - "GET /health HTTP/1.1" 200 OK
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/bin/aerich", line 10, in <module>
+hemoday_api  |     sys.exit(main())
+hemoday_api  |              ^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/cli.py", line 422, in main
+hemoday_api  |     cli()
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1550, in __call__
+hemoday_api  |     return anyio.run(self._main, main, args, kwargs, **opts)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_core/_eventloop.py", line 77, in run
+hemoday_api  |     return async_backend.run(func, args, {}, backend_options)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2342, in run
+hemoday_api  |     return runner.run(wrapper())
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+hemoday_api  |     return self._loop.run_until_complete(task)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+hemoday_api  |     return future.result()
+hemoday_api  |            ^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2325, in wrapper
+hemoday_api  |     return await func(*args)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1568, in _main
+hemoday_api  |     return await main(*args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1443, in main
+hemoday_api  |     rv = await self.invoke(ctx)
+hemoday_api  |          ^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1956, in invoke
+hemoday_api  |     return await _process_result(await sub_ctx.command.invoke(sub_ctx))
+hemoday_api  |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1306, in invoke
+hemoday_api  |     return await ctx.invoke(self.callback, **ctx.params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 873, in invoke
+hemoday_api  |     rv = await rv
+hemoday_api  |          ^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/cli.py", line 149, in upgrade
+hemoday_api  |     migrated = await command.upgrade(run_in_transaction=in_transaction, fake=fake)
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/__init__.py", line 137, in upgrade
+hemoday_api  |     await self._upgrade(conn, version_file, fake, version_module)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/__init__.py", line 115, in _upgrade
+hemoday_api  |     await conn.execute_script(await upgrade(conn))
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 156, in execute_script
+hemoday_api  |     await connection.execute(query)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 354, in execute
+hemoday_api  |     result = await self._protocol.query(query, timeout)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 369, in query
+hemoday_api  | asyncpg.exceptions.DependentObjectsStillExistError: cannot drop table blood_tests because other objects depend on it
+hemoday_api  | DETAIL:  constraint blood_test_results_blood_test_id_fkey on table blood_test_results depends on table blood_tests
+hemoday_api  | HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/bin/aerich", line 10, in <module>
+hemoday_api  |     sys.exit(main())
+hemoday_api  |              ^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/cli.py", line 422, in main
+hemoday_api  |     cli()
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1550, in __call__
+hemoday_api  |     return anyio.run(self._main, main, args, kwargs, **opts)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_core/_eventloop.py", line 77, in run
+hemoday_api  |     return async_backend.run(func, args, {}, backend_options)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2342, in run
+hemoday_api  |     return runner.run(wrapper())
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+hemoday_api  |     return self._loop.run_until_complete(task)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+hemoday_api  |     return future.result()
+hemoday_api  |            ^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2325, in wrapper
+hemoday_api  |     return await func(*args)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1568, in _main
+hemoday_api  |     return await main(*args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1443, in main
+hemoday_api  |     rv = await self.invoke(ctx)
+hemoday_api  |          ^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1956, in invoke
+hemoday_api  |     return await _process_result(await sub_ctx.command.invoke(sub_ctx))
+hemoday_api  |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1306, in invoke
+hemoday_api  |     return await ctx.invoke(self.callback, **ctx.params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 873, in invoke
+hemoday_api  |     rv = await rv
+hemoday_api  |          ^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/cli.py", line 149, in upgrade
+hemoday_api  |     migrated = await command.upgrade(run_in_transaction=in_transaction, fake=fake)
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/__init__.py", line 137, in upgrade
+hemoday_api  |     await self._upgrade(conn, version_file, fake, version_module)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/__init__.py", line 115, in _upgrade
+hemoday_api  |     await conn.execute_script(await upgrade(conn))
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 156, in execute_script
+hemoday_api  |     await connection.execute(query)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 354, in execute
+hemoday_api  |     result = await self._protocol.query(query, timeout)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 369, in query
+hemoday_api  | asyncpg.exceptions.DependentObjectsStillExistError: cannot drop table blood_tests because other objects depend on it
+hemoday_api  | DETAIL:  constraint blood_test_results_blood_test_id_fkey on table blood_test_results depends on table blood_tests
+hemoday_api  | HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/bin/aerich", line 10, in <module>
+hemoday_api  |     sys.exit(main())
+hemoday_api  |              ^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/cli.py", line 422, in main
+hemoday_api  |     cli()
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1550, in __call__
+hemoday_api  |     return anyio.run(self._main, main, args, kwargs, **opts)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_core/_eventloop.py", line 77, in run
+hemoday_api  |     return async_backend.run(func, args, {}, backend_options)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2342, in run
+hemoday_api  |     return runner.run(wrapper())
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+hemoday_api  |     return self._loop.run_until_complete(task)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+hemoday_api  |     return future.result()
+hemoday_api  |            ^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2325, in wrapper
+hemoday_api  |     return await func(*args)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1568, in _main
+hemoday_api  |     return await main(*args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1443, in main
+hemoday_api  |     rv = await self.invoke(ctx)
+hemoday_api  |          ^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1956, in invoke
+hemoday_api  |     return await _process_result(await sub_ctx.command.invoke(sub_ctx))
+hemoday_api  |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1306, in invoke
+hemoday_api  |     return await ctx.invoke(self.callback, **ctx.params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 873, in invoke
+hemoday_api  |     rv = await rv
+hemoday_api  |          ^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/cli.py", line 149, in upgrade
+hemoday_api  |     migrated = await command.upgrade(run_in_transaction=in_transaction, fake=fake)
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/__init__.py", line 137, in upgrade
+hemoday_api  |     await self._upgrade(conn, version_file, fake, version_module)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/__init__.py", line 115, in _upgrade
+hemoday_api  |     await conn.execute_script(await upgrade(conn))
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 156, in execute_script
+hemoday_api  |     await connection.execute(query)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 354, in execute
+hemoday_api  |     result = await self._protocol.query(query, timeout)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 369, in query
+hemoday_api  | asyncpg.exceptions.DependentObjectsStillExistError: cannot drop table blood_tests because other objects depend on it
+hemoday_api  | DETAIL:  constraint blood_test_results_blood_test_id_fkey on table blood_test_results depends on table blood_tests
+hemoday_api  | HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/bin/aerich", line 10, in <module>
+hemoday_api  |     sys.exit(main())
+hemoday_api  |              ^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/cli.py", line 422, in main
+hemoday_api  |     cli()
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1550, in __call__
+hemoday_api  |     return anyio.run(self._main, main, args, kwargs, **opts)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_core/_eventloop.py", line 77, in run
+hemoday_api  |     return async_backend.run(func, args, {}, backend_options)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2342, in run
+hemoday_api  |     return runner.run(wrapper())
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+hemoday_api  |     return self._loop.run_until_complete(task)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+hemoday_api  |     return future.result()
+hemoday_api  |            ^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2325, in wrapper
+hemoday_api  |     return await func(*args)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1568, in _main
+hemoday_api  |     return await main(*args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1443, in main
+hemoday_api  |     rv = await self.invoke(ctx)
+hemoday_api  |          ^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1956, in invoke
+hemoday_api  |     return await _process_result(await sub_ctx.command.invoke(sub_ctx))
+hemoday_api  |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1306, in invoke
+hemoday_api  |     return await ctx.invoke(self.callback, **ctx.params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 873, in invoke
+hemoday_api  |     rv = await rv
+hemoday_api  |          ^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/cli.py", line 149, in upgrade
+hemoday_api  |     migrated = await command.upgrade(run_in_transaction=in_transaction, fake=fake)
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/__init__.py", line 137, in upgrade
+hemoday_api  |     await self._upgrade(conn, version_file, fake, version_module)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/__init__.py", line 115, in _upgrade
+hemoday_api  |     await conn.execute_script(await upgrade(conn))
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 156, in execute_script
+hemoday_api  |     await connection.execute(query)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 354, in execute
+hemoday_api  |     result = await self._protocol.query(query, timeout)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 369, in query
+hemoday_api  | asyncpg.exceptions.DependentObjectsStillExistError: cannot drop table blood_tests because other objects depend on it
+hemoday_api  | DETAIL:  constraint blood_test_results_blood_test_id_fkey on table blood_test_results depends on table blood_tests
+hemoday_api  | HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/bin/aerich", line 10, in <module>
+hemoday_api  |     sys.exit(main())
+hemoday_api  |              ^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/cli.py", line 422, in main
+hemoday_api  |     cli()
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1550, in __call__
+hemoday_api  |     return anyio.run(self._main, main, args, kwargs, **opts)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_core/_eventloop.py", line 77, in run
+hemoday_api  |     return async_backend.run(func, args, {}, backend_options)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2342, in run
+hemoday_api  |     return runner.run(wrapper())
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+hemoday_api  |     return self._loop.run_until_complete(task)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+hemoday_api  |     return future.result()
+hemoday_api  |            ^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2325, in wrapper
+hemoday_api  |     return await func(*args)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1568, in _main
+hemoday_api  |     return await main(*args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1443, in main
+hemoday_api  |     rv = await self.invoke(ctx)
+hemoday_api  |          ^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1956, in invoke
+hemoday_api  |     return await _process_result(await sub_ctx.command.invoke(sub_ctx))
+hemoday_api  |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 1306, in invoke
+hemoday_api  |     return await ctx.invoke(self.callback, **ctx.params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncclick/core.py", line 873, in invoke
+hemoday_api  |     rv = await rv
+hemoday_api  |          ^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/cli.py", line 149, in upgrade
+hemoday_api  |     migrated = await command.upgrade(run_in_transaction=in_transaction, fake=fake)
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/__init__.py", line 137, in upgrade
+hemoday_api  |     await self._upgrade(conn, version_file, fake, version_module)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/aerich/__init__.py", line 115, in _upgrade
+hemoday_api  |     await conn.execute_script(await upgrade(conn))
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 156, in execute_script
+hemoday_api  |     await connection.execute(query)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 354, in execute
+hemoday_api  |     result = await self._protocol.query(query, timeout)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 369, in query
+hemoday_api  | asyncpg.exceptions.DependentObjectsStillExistError: cannot drop table blood_tests because other objects depend on it
+hemoday_api  | DETAIL:  constraint blood_test_results_blood_test_id_fkey on table blood_test_results depends on table blood_tests
+hemoday_api  | HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+hemoday_api  | Success upgrading to 2_20260125054908_add_chelator_and_updates.py
+hemoday_api  | INFO:     Started server process [10]
+hemoday_api  | INFO:     Waiting for application startup.
+hemoday_api  | INFO:     Application startup complete.
+hemoday_api  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+hemoday_api  | No upgrade items found
+hemoday_api  | INFO:     Started server process [10]
+hemoday_api  | INFO:     Waiting for application startup.
+hemoday_api  | INFO:     Application startup complete.
+hemoday_api  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+hemoday_api  | No upgrade items found
+hemoday_api  | INFO:     Started server process [10]
+hemoday_api  | INFO:     Waiting for application startup.
+hemoday_api  | INFO:     Application startup complete.
+hemoday_api  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+hemoday_api  | INFO:     172.19.0.1:54206 - "OPTIONS /api/v1/auth/me HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:54206 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:54206 - "OPTIONS /api/v1/sync?last_pulled_at=1769319985668&schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:54206 - "GET /api/v1/sync?last_pulled_at=1769319985668&schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:54206 - "OPTIONS /api/v1/sync HTTP/1.1" 200 OK
+hemoday_api  | ERROR:root:Error syncing table transfusions: invalid input for query argument $1: 'B6TFREKwIy2vURYt' (invalid UUID 'B6TFREKwIy2vURYt': length must be between 32..36 characters, got 16)
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 251, in asyncpg.protocol.protocol.Codec.encode
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 153, in asyncpg.protocol.protocol.Codec.encode_scalar
+hemoday_api  |   File "asyncpg/pgproto/codecs/uuid.pyx", line 16, in asyncpg.pgproto.pgproto.uuid_encode
+hemoday_api  |   File "asyncpg/pgproto/uuid.pyx", line 88, in asyncpg.pgproto.pgproto.pg_uuid_bytes_from_str
+hemoday_api  | ValueError: invalid UUID 'B6TFREKwIy2vURYt': length must be between 32..36 characters, got 16
+hemoday_api  | 
+hemoday_api  | The above exception was the direct cause of the following exception:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2033, in _do_execute
+hemoday_api  |     result = await executor(stmt, None)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 184, in bind_execute
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  | asyncpg.exceptions.DataError: invalid input for query argument $1: 'B6TFREKwIy2vURYt' (invalid UUID 'B6TFREKwIy2vURYt': length must be between 32..36 characters, got 16)
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: invalid input for query argument $1: 'B6TFREKwIy2vURYt' (invalid UUID 'B6TFREKwIy2vURYt': length must be between 32..36 characters, got 16)
+hemoday_api  | --- Syncing table: transfusions ---
+hemoday_api  | Created: 1
+hemoday_api  | First item: {'id': 'B6TFREKwIy2vURYt', '_status': 'created', '_changed': '', 'date': '2026-01-25', 'component': 'Гемоглобин', 'volume': 250, 'weight': 70, 'volume_per_kg': 3.5714285714285716, 'hb_before': 85, 'hb_after': 100, 'delta_hb': 15, 'chelator': None, 'created_at': 1769319985578, 'updated_at': 1769319985578}
+hemoday_api  | INFO:     172.19.0.1:54206 - "POST /api/v1/sync HTTP/1.1" 500 Internal Server Error
+hemoday_api  | ERROR:    Exception in ASGI application
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 251, in asyncpg.protocol.protocol.Codec.encode
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 153, in asyncpg.protocol.protocol.Codec.encode_scalar
+hemoday_api  |   File "asyncpg/pgproto/codecs/uuid.pyx", line 16, in asyncpg.pgproto.pgproto.uuid_encode
+hemoday_api  |   File "asyncpg/pgproto/uuid.pyx", line 88, in asyncpg.pgproto.pgproto.pg_uuid_bytes_from_str
+hemoday_api  | ValueError: invalid UUID 'B6TFREKwIy2vURYt': length must be between 32..36 characters, got 16
+hemoday_api  | 
+hemoday_api  | The above exception was the direct cause of the following exception:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2033, in _do_execute
+hemoday_api  |     result = await executor(stmt, None)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 184, in bind_execute
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  | asyncpg.exceptions.DataError: invalid input for query argument $1: 'B6TFREKwIy2vURYt' (invalid UUID 'B6TFREKwIy2vURYt': length must be between 32..36 characters, got 16)
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+hemoday_api  |     result = await app(  # type: ignore[func-returns-value]
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+hemoday_api  |     return await self.app(scope, receive, send)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1135, in __call__
+hemoday_api  |     await super().__call__(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+hemoday_api  |     await self.app(scope, receive, _send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+hemoday_api  |     await self.simple_response(scope, receive, send, request_headers=headers)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+hemoday_api  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+hemoday_api  |     await route.handle(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 115, in app
+hemoday_api  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 101, in app
+hemoday_api  |     response = await f(request)
+hemoday_api  |                ^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 355, in app
+hemoday_api  |     raw_response = await run_endpoint_function(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+hemoday_api  |     return await dependant.call(**values)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/app/app/api/v1/sync.py", line 36, in push_changes
+hemoday_api  |     await SyncService.push_changes(
+hemoday_api  |   File "/app/app/services/sync.py", line 128, in push_changes
+hemoday_api  |     raise e
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: invalid input for query argument $1: 'B6TFREKwIy2vURYt' (invalid UUID 'B6TFREKwIy2vURYt': length must be between 32..36 characters, got 16)
+hemoday_api  | INFO:     172.19.0.1:38184 - "OPTIONS /api/v1/auth/login HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:38184 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:38184 - "OPTIONS /api/v1/sync?schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:38184 - "GET /api/v1/sync?schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:38184 - "OPTIONS /api/v1/sync HTTP/1.1" 200 OK
+hemoday_api  | ERROR:root:Error syncing table component_types: invalid input for query argument $1: 'Iwha0R63rnGtmLCo' (invalid UUID 'Iwha0R63rnGtmLCo': length must be between 32..36 characters, got 16)
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 251, in asyncpg.protocol.protocol.Codec.encode
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 153, in asyncpg.protocol.protocol.Codec.encode_scalar
+hemoday_api  |   File "asyncpg/pgproto/codecs/uuid.pyx", line 16, in asyncpg.pgproto.pgproto.uuid_encode
+hemoday_api  |   File "asyncpg/pgproto/uuid.pyx", line 88, in asyncpg.pgproto.pgproto.pg_uuid_bytes_from_str
+hemoday_api  | ValueError: invalid UUID 'Iwha0R63rnGtmLCo': length must be between 32..36 characters, got 16
+hemoday_api  | 
+hemoday_api  | The above exception was the direct cause of the following exception:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2033, in _do_execute
+hemoday_api  |     result = await executor(stmt, None)
+hemoday_api  | --- Syncing table: transfusions ---
+hemoday_api  | Created: 0
+hemoday_api  | --- Syncing table: analyses ---
+hemoday_api  | Created: 0
+hemoday_api  | --- Syncing table: analysis_items ---
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 184, in bind_execute
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  | asyncpg.exceptions.DataError: invalid input for query argument $1: 'Iwha0R63rnGtmLCo' (invalid UUID 'Iwha0R63rnGtmLCo': length must be between 32..36 characters, got 16)
+hemoday_api  | Created: 0
+hemoday_api  | --- Syncing table: reminders ---
+hemoday_api  | Created: 0
+hemoday_api  | --- Syncing table: component_types ---
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  | Created: 3
+hemoday_api  | First item: {'id': 'Iwha0R63rnGtmLCo', '_status': 'created', '_changed': '', 'name': 'Тромбоциты', 'icon_name': 'history', 'is_default': True, 'sort_order': 3, 'created_at': 0, 'updated_at': 0}
+hemoday_api  | INFO:     172.19.0.1:38184 - "POST /api/v1/sync HTTP/1.1" 500 Internal Server Error
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: invalid input for query argument $1: 'Iwha0R63rnGtmLCo' (invalid UUID 'Iwha0R63rnGtmLCo': length must be between 32..36 characters, got 16)
+hemoday_api  | ERROR:    Exception in ASGI application
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 251, in asyncpg.protocol.protocol.Codec.encode
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 153, in asyncpg.protocol.protocol.Codec.encode_scalar
+hemoday_api  |   File "asyncpg/pgproto/codecs/uuid.pyx", line 16, in asyncpg.pgproto.pgproto.uuid_encode
+hemoday_api  |   File "asyncpg/pgproto/uuid.pyx", line 88, in asyncpg.pgproto.pgproto.pg_uuid_bytes_from_str
+hemoday_api  | ValueError: invalid UUID 'Iwha0R63rnGtmLCo': length must be between 32..36 characters, got 16
+hemoday_api  | 
+hemoday_api  | The above exception was the direct cause of the following exception:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2033, in _do_execute
+hemoday_api  |     result = await executor(stmt, None)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 184, in bind_execute
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  | asyncpg.exceptions.DataError: invalid input for query argument $1: 'Iwha0R63rnGtmLCo' (invalid UUID 'Iwha0R63rnGtmLCo': length must be between 32..36 characters, got 16)
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+hemoday_api  |     result = await app(  # type: ignore[func-returns-value]
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+hemoday_api  |     return await self.app(scope, receive, send)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1135, in __call__
+hemoday_api  |     await super().__call__(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+hemoday_api  |     await self.app(scope, receive, _send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+hemoday_api  |     await self.simple_response(scope, receive, send, request_headers=headers)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+hemoday_api  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+hemoday_api  |     await route.handle(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 115, in app
+hemoday_api  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 101, in app
+hemoday_api  |     response = await f(request)
+hemoday_api  |                ^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 355, in app
+hemoday_api  |     raw_response = await run_endpoint_function(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+hemoday_api  |     return await dependant.call(**values)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/app/app/api/v1/sync.py", line 36, in push_changes
+hemoday_api  |     await SyncService.push_changes(
+hemoday_api  |   File "/app/app/services/sync.py", line 128, in push_changes
+hemoday_api  |     raise e
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: invalid input for query argument $1: 'Iwha0R63rnGtmLCo' (invalid UUID 'Iwha0R63rnGtmLCo': length must be between 32..36 characters, got 16)
+hemoday_api  | INFO:     172.19.0.1:38194 - "OPTIONS /api/v1/sync?last_pulled_at=1769321450577&schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:38194 - "GET /api/v1/sync?last_pulled_at=1769321450577&schema_version=6 HTTP/1.1" 200 OK
+hemoday_api  | INFO:     172.19.0.1:38194 - "OPTIONS /api/v1/sync HTTP/1.1" 200 OK
+hemoday_api  | ERROR:root:Error syncing table transfusions: invalid input for query argument $1: 'vCpnVXPSo0BM6k2L' (invalid UUID 'vCpnVXPSo0BM6k2L': length must be between 32..36 characters, got 16)
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 251, in asyncpg.protocol.protocol.Codec.encode
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 153, in asyncpg.protocol.protocol.Codec.encode_scalar
+hemoday_api  |   File "asyncpg/pgproto/codecs/uuid.pyx", line 16, in asyncpg.pgproto.pgproto.uuid_encode
+hemoday_api  |   File "asyncpg/pgproto/uuid.pyx", line 88, in asyncpg.pgproto.pgproto.pg_uuid_bytes_from_str
+hemoday_api  | ValueError: invalid UUID 'vCpnVXPSo0BM6k2L': length must be between 32..36 characters, got 16
+hemoday_api  | 
+hemoday_api  | The above exception was the direct cause of the following exception:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2033, in _do_execute
+hemoday_api  |     result = await executor(stmt, None)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 184, in bind_execute
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  | asyncpg.exceptions.DataError: invalid input for query argument $1: 'vCpnVXPSo0BM6k2L' (invalid UUID 'vCpnVXPSo0BM6k2L': length must be between 32..36 characters, got 16)
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  | --- Syncing table: transfusions ---
+hemoday_api  | Created: 1
+hemoday_api  | First item: {'id': 'vCpnVXPSo0BM6k2L', '_status': 'created', '_changed': '', 'date': '2026-01-12', 'component': 'Гемоглобин', 'volume': 250, 'weight': 70, 'volume_per_kg': 3.5714285714285716, 'hb_before': 85, 'hb_after': 100, 'delta_hb': 15, 'chelator': None, 'created_at': 1769321454333, 'updated_at': 1769321454333}
+hemoday_api  | INFO:     172.19.0.1:38194 - "POST /api/v1/sync HTTP/1.1" 500 Internal Server Error
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: invalid input for query argument $1: 'vCpnVXPSo0BM6k2L' (invalid UUID 'vCpnVXPSo0BM6k2L': length must be between 32..36 characters, got 16)
+hemoday_api  | ERROR:    Exception in ASGI application
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 251, in asyncpg.protocol.protocol.Codec.encode
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 153, in asyncpg.protocol.protocol.Codec.encode_scalar
+hemoday_api  |   File "asyncpg/pgproto/codecs/uuid.pyx", line 16, in asyncpg.pgproto.pgproto.uuid_encode
+hemoday_api  |   File "asyncpg/pgproto/uuid.pyx", line 88, in asyncpg.pgproto.pgproto.pg_uuid_bytes_from_str
+hemoday_api  | ValueError: invalid UUID 'vCpnVXPSo0BM6k2L': length must be between 32..36 characters, got 16
+hemoday_api  | 
+hemoday_api  | The above exception was the direct cause of the following exception:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2033, in _do_execute
+hemoday_api  |     result = await executor(stmt, None)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 184, in bind_execute
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  | asyncpg.exceptions.DataError: invalid input for query argument $1: 'vCpnVXPSo0BM6k2L' (invalid UUID 'vCpnVXPSo0BM6k2L': length must be between 32..36 characters, got 16)
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+hemoday_api  |     result = await app(  # type: ignore[func-returns-value]
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+hemoday_api  |     return await self.app(scope, receive, send)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1135, in __call__
+hemoday_api  |     await super().__call__(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+hemoday_api  |     await self.app(scope, receive, _send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+hemoday_api  |     await self.simple_response(scope, receive, send, request_headers=headers)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+hemoday_api  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+hemoday_api  |     await route.handle(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 115, in app
+hemoday_api  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 101, in app
+hemoday_api  |     response = await f(request)
+hemoday_api  |                ^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 355, in app
+hemoday_api  |     raw_response = await run_endpoint_function(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+hemoday_api  |     return await dependant.call(**values)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/app/app/api/v1/sync.py", line 36, in push_changes
+hemoday_api  |     await SyncService.push_changes(
+hemoday_api  |   File "/app/app/services/sync.py", line 128, in push_changes
+hemoday_api  |     raise e
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: invalid input for query argument $1: 'vCpnVXPSo0BM6k2L' (invalid UUID 'vCpnVXPSo0BM6k2L': length must be between 32..36 characters, got 16)
+hemoday_api  | INFO:     172.19.0.1:37192 - "POST /api/v1/sync HTTP/1.1" 401 Unauthorized
+hemoday_api  | INFO:     172.19.0.1:42706 - "POST /api/v1/auth/register HTTP/1.1" 201 Created
+hemoday_api  | ERROR:root:Error syncing table transfusions: invalid input for query argument $1: 'test-uuid-1' (invalid UUID 'test-uuid-1': length must be between 32..36 characters, got 11)
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 251, in asyncpg.protocol.protocol.Codec.encode
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 153, in asyncpg.protocol.protocol.Codec.encode_scalar
+hemoday_api  |   File "asyncpg/pgproto/codecs/uuid.pyx", line 16, in asyncpg.pgproto.pgproto.uuid_encode
+hemoday_api  |   File "asyncpg/pgproto/uuid.pyx", line 88, in asyncpg.pgproto.pgproto.pg_uuid_bytes_from_str
+hemoday_api  | ValueError: invalid UUID 'test-uuid-1': length must be between 32..36 characters, got 11
+hemoday_api  | 
+hemoday_api  | The above exception was the direct cause of the following exception:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2033, in _do_execute
+hemoday_api  |     result = await executor(stmt, None)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 184, in bind_execute
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  | asyncpg.exceptions.DataError: invalid input for query argument $1: 'test-uuid-1' (invalid UUID 'test-uuid-1': length must be between 32..36 characters, got 11)
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  | --- Syncing table: transfusions ---
+hemoday_api  | Created: 1
+hemoday_api  | First item: {'id': 'test-uuid-1', 'date': '2023-10-27', 'volume': 200, 'weight': 70.0, 'component': 'concentrate', 'volume_per_kg': 2.8, 'hb_before': 90, 'hb_after': 100, 'delta_hb': 10, 'chelator': 'Exjade', 'created_at': 1769321562082, 'updated_at': 1769321562082}
+hemoday_api  | INFO:     172.19.0.1:42708 - "POST /api/v1/sync HTTP/1.1" 500 Internal Server Error
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: invalid input for query argument $1: 'test-uuid-1' (invalid UUID 'test-uuid-1': length must be between 32..36 characters, got 11)
+hemoday_api  | ERROR:    Exception in ASGI application
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 251, in asyncpg.protocol.protocol.Codec.encode
+hemoday_api  |   File "asyncpg/protocol/codecs/base.pyx", line 153, in asyncpg.protocol.protocol.Codec.encode_scalar
+hemoday_api  |   File "asyncpg/pgproto/codecs/uuid.pyx", line 16, in asyncpg.pgproto.pgproto.uuid_encode
+hemoday_api  |   File "asyncpg/pgproto/uuid.pyx", line 88, in asyncpg.pgproto.pgproto.pg_uuid_bytes_from_str
+hemoday_api  | ValueError: invalid UUID 'test-uuid-1': length must be between 32..36 characters, got 11
+hemoday_api  | 
+hemoday_api  | The above exception was the direct cause of the following exception:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 89, in _translate_exceptions
+hemoday_api  |     return await func(self, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 145, in execute_query
+hemoday_api  |     rows = await connection.fetch(*params)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 694, in fetch
+hemoday_api  |     return await self._execute(
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1873, in _execute
+hemoday_api  |     result, _ = await self.__execute(
+hemoday_api  |                 ^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 1970, in __execute
+hemoday_api  |     result, stmt = await self._do_execute(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/asyncpg/connection.py", line 2033, in _do_execute
+hemoday_api  |     result = await executor(stmt, None)
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "asyncpg/protocol/protocol.pyx", line 184, in bind_execute
+hemoday_api  |   File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+hemoday_api  | asyncpg.exceptions.DataError: invalid input for query argument $1: 'test-uuid-1' (invalid UUID 'test-uuid-1': length must be between 32..36 characters, got 11)
+hemoday_api  | 
+hemoday_api  | During handling of the above exception, another exception occurred:
+hemoday_api  | 
+hemoday_api  | Traceback (most recent call last):
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+hemoday_api  |     result = await app(  # type: ignore[func-returns-value]
+hemoday_api  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+hemoday_api  |     return await self.app(scope, receive, send)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1135, in __call__
+hemoday_api  |     await super().__call__(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 107, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+hemoday_api  |     await self.app(scope, receive, _send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 85, in __call__
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+hemoday_api  |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+hemoday_api  |     await self.middleware_stack(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+hemoday_api  |     await route.handle(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+hemoday_api  |     await self.app(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 115, in app
+hemoday_api  |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+hemoday_api  |     raise exc
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+hemoday_api  |     await app(scope, receive, sender)
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 101, in app
+hemoday_api  |     response = await f(request)
+hemoday_api  |                ^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 355, in app
+hemoday_api  |     raw_response = await run_endpoint_function(
+hemoday_api  |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+hemoday_api  |     return await dependant.call(**values)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/app/app/api/v1/sync.py", line 36, in push_changes
+hemoday_api  |     await SyncService.push_changes(
+hemoday_api  |   File "/app/app/services/sync.py", line 128, in push_changes
+hemoday_api  |     raise e
+hemoday_api  |   File "/app/app/services/sync.py", line 112, in push_changes
+hemoday_api  |     await SyncService._create_or_update_record(model, record_data)
+hemoday_api  |   File "/app/app/services/sync.py", line 164, in _create_or_update_record
+hemoday_api  |     existing = await model.filter(id=record_id).first()
+hemoday_api  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/queryset.py", line 1235, in _execute
+hemoday_api  |     instance_list = await self._db.executor_class(
+hemoday_api  |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base/executor.py", line 108, in execute_select
+hemoday_api  |     _, raw_results = await self.db.execute_query(sql, values)
+hemoday_api  |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/base_postgres/client.py", line 33, in _translate_exceptions
+hemoday_api  |     return await self._translate_exceptions(func, *args, **kwargs)
+hemoday_api  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+hemoday_api  |   File "/usr/local/lib/python3.12/site-packages/tortoise/backends/asyncpg/client.py", line 91, in _translate_exceptions
+hemoday_api  |     raise OperationalError(exc)
+hemoday_api  | tortoise.exceptions.OperationalError: invalid input for query argument $1: 'test-uuid-1' (invalid UUID 'test-uuid-1': length must be between 32..36 characters, got 11)

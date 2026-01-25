@@ -15,7 +15,7 @@ class WatermelonDBModel(Model):
     Every table must have: id, created_at, updated_at, deleted_at
     """
     
-    id = fields.UUIDField(pk=True, default=uuid.uuid4)
+    id = fields.CharField(pk=True, max_length=255, default=lambda: str(uuid.uuid4()))
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)
     deleted_at = fields.DatetimeField(null=True, default=None)
